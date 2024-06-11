@@ -1,4 +1,5 @@
 import React from "react";
+import ContactForm from "./ContactForm";
 
 const Home1Contact = () => {
   return (
@@ -36,7 +37,7 @@ const Home1Contact = () => {
                       </g>
                     </svg>
                   </span>
-                  <h2>Connect with Zenfy</h2>
+                  <h2>Connect with Metageeks</h2>
                   <p>
                     Ready to take the first step towards unlocking
                     opportunities, realizing goals, and embracing innovation?
@@ -64,7 +65,7 @@ const Home1Contact = () => {
                     <div className="content">
                       <span>To More Inquiry</span>
                       <h6>
-                        <a href="tel:+990737621432">+990-737 621 432</a>
+                        <a href="tel:+16464666672">+1 646 466 6672</a>
                       </h6>
                     </div>
                   </div>
@@ -86,7 +87,9 @@ const Home1Contact = () => {
                     <div className="content">
                       <span>To Send Mail</span>
                       <h6>
-                        <a href="mailto:info@example.com">info@gmail.com</a>
+                        <a href="mailto:info@quantumhive.xyz">
+                          info@quantumhive.xyz
+                        </a>
                       </h6>
                     </div>
                   </div>
@@ -99,19 +102,19 @@ const Home1Contact = () => {
                   <h6>Social Just You Connected Us!</h6>
                   <ul className="social-list">
                     <li>
-                      <a href="https://www.linkedin.com/">
+                      <a href="https://www.linkedin.com/company/metageekstech/">
                         <i className="bi bi-linkedin" />
                         <span>LinkedIn</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://www.facebook.com/">
+                      <a href="https://www.facebook.com/metageeks.tech/">
                         <i className="bi bi-facebook" />
                         <span>Facebook</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://twitter.com/">
+                      <a href="https://x.com/MetaGeeks_tech?t=fwt-7ZmA6NsSFV6J2dcN3w&s=09">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width={18}
@@ -126,7 +129,7 @@ const Home1Contact = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="https://www.instagram.com/">
+                      <a href="https://www.instagram.com/metageeks.tech?utm_source=qr&igsh=MWI3YWdjbzdtcWhzZw==">
                         <i className="bi bi-instagram" />
                         <span>Instagram</span>
                       </a>
@@ -135,68 +138,8 @@ const Home1Contact = () => {
                 </div>
               </div>
             </div>
-            <div
-              className="col-lg-7 wow animate fadeInUp"
-              data-wow-delay="200ms"
-              data-wow-duration="1500ms"
-            >
-              <div className="contact-form-wrap">
-                <div className="contact-form-area">
-                  <h3>Your Success Starts Here!</h3>
-                  <form>
-                    <div className="row">
-                      <div className="col-lg-6 mb-20">
-                        <div className="form-inner">
-                          <label>Full Name</label>
-                          <input type="text" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6 mb-20">
-                        <div className="form-inner">
-                          <label>Company / Organization *</label>
-                          <input type="text" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6 mb-20">
-                        <div className="form-inner">
-                          <label>Phone *</label>
-                          <input type="text" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6 mb-20">
-                        <div className="form-inner">
-                          <label>Company email *</label>
-                          <input type="email" />
-                        </div>
-                      </div>
-                      <div className="col-lg-12 mb-20">
-                        <div className="form-inner">
-                          <label>Your Subject *</label>
-                          <input type="text" />
-                        </div>
-                      </div>
-                      <div className="col-lg-12 mb-30">
-                        <div className="form-inner">
-                          <label>Message *</label>
-                          <textarea defaultValue={""} />
-                        </div>
-                      </div>
-                      <div className="col-lg-12">
-                        <div className="form-inner">
-                          <button
-                            className="primary-btn2"
-                            type="submit"
-                            data-text="Submit Now"
-                          >
-                            <span>Submit Now</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
+            {/* constact form */}
+            <ContactForm />
           </div>
         </div>
       </div>

@@ -25,7 +25,7 @@ const Footer2 = () => {
                       dream.
                     </p>
                   </div>
-                  <ul className="rating-area">
+                  {/* <ul className="rating-area">
                     <li>
                       <a href="https://clutch.co" className="single-rating">
                         <div className="review">
@@ -97,7 +97,7 @@ const Footer2 = () => {
                         </div>
                       </a>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
               <div className="col-lg-2 col-md-4 col-sm-6 d-flex justify-content-lg-center justify-content-sm-end">
@@ -233,7 +233,7 @@ const Footer2 = () => {
               <div className="content">
                 <span>Call Any Time</span>
                 <h6>
-                  <a href="tel:2-965-871-8617">2-965-871-8617</a>
+                  <a href="tel:+16464666672">+1 646 466 6672</a>
                 </h6>
               </div>
             </div>
@@ -255,7 +255,7 @@ const Footer2 = () => {
                 <span>Address</span>
                 <h6>
                   <a href="https://www.google.com/maps/place/Egens+Lab/@23.8340712,90.3631117,17z/data=!3m1!4b1!4m6!3m5!1s0x3755c14c8682a473:0xa6c74743d52adb88!8m2!3d23.8340663!4d90.3656866!16s%2Fg%2F11rs9vlwsk?entry=ttu">
-                    Dhaka, Bangladesh
+                    1111b South Governors Avenue Dover DE 19904 United States.
                   </a>
                 </h6>
               </div>
@@ -280,7 +280,7 @@ const Footer2 = () => {
               <div className="content">
                 <span>Say Hello</span>
                 <h6>
-                  <a href="mailto:info@example.com">info@example.com</a>
+                  <a href="mailto:info@quantumhive.xyz">info@quantumhive.xyz</a>
                 </h6>
               </div>
             </div>

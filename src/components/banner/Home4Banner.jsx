@@ -1,20 +1,16 @@
+"use client";
 import Link from "next/link";
 import React from "react";
+import GetInTouch from "./GetInTouch";
+import { useState } from "react";
 
 const Home4Banner = () => {
+  const [getInTouchPopup, setPopup] = useState(false);
   return (
     <>
       <div className="home4-banner-section mb-130">
-        <img
-          src="assets/img/home4/home4-banner-img-light.png"
-          alt=""
-          className="banner-img light"
-        />
-        <img
-          src="assets/img/home4/home4-banner-img-dark.png"
-          alt=""
-          className="banner-img dark"
-        />
+        <img src="assets/home-banner.png" alt="" className="banner-img light" />
+        <img src="assets/home-banner.png" alt="" className="banner-img dark" />
         <div className="container">
           <div className="row justify-content-end">
             <div className="col-xl-10">
@@ -31,8 +27,8 @@ const Home4Banner = () => {
                     introduct the.
                   </p>
                   <div className="banner-btn">
-                    <Link href="/about">
-                      <div className="bg">
+                    <span onClick={() => setPopup(true)}>
+                      <div style={{ display: "hidden" }} className="bg">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width={201}
@@ -44,12 +40,12 @@ const Home4Banner = () => {
                         </svg>
                       </div>
                       <div className="details-button">
-                        Learn More
+                        Get In Touch
                         <svg viewBox="0 0 13 20">
                           <polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" />
                         </svg>
                       </div>
-                    </Link>
+                    </span>
                   </div>
                 </div>
                 <div className="scroll-down-btn">
@@ -106,6 +102,7 @@ const Home4Banner = () => {
           </h2>
         </div>
       </div>
+      {getInTouchPopup ? <GetInTouch setPopup={setPopup} /> : null}
     </>
   );
 };
