@@ -20,10 +20,13 @@ const MainLayout = ({ children }) => {
     (route) => route === pathname
   );
 
+  const words = ["service", "blog", "case-study"];
+  const regex = new RegExp(`^/(${words.join("|")})/.*$`);
+
   return (
     <>
       <Header3 />
-      <Breadcrumb />
+      {!regex.test(pathname) && <Breadcrumb />}
       {children}
 
       {shouldRenderBreadcrumb && <Home1Contact />}

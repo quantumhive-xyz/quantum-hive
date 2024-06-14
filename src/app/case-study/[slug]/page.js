@@ -118,11 +118,7 @@ const CaseStudyDetails = () => {
             <div className="col-lg-8">
               <div className="case-thumb">
                 <img
-                  src={
-                    caseStudy
-                      ? urlForImage(caseStudy?.mainImage).url()
-                      : "/assets/img/innerpage/case-thumb.jpg"
-                  }
+                  src={caseStudy ? "" : "/assets/img/innerpage/case-thumb.jpg"}
                   alt={caseStudy?.mainImageAlt}
                 />
               </div>
@@ -318,7 +314,7 @@ const CaseStudyDetails = () => {
                     <img
                       src={
                         caseStudy
-                          ? urlForImage(caseStudy?.mainImage).url()
+                          ? ""
                           : "/assets/img/innerpage/case-study-img1.jpg"
                       }
                       alt={caseStudy?.mainImageAlt}

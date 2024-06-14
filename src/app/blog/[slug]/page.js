@@ -4,7 +4,7 @@ import useWow from "@/hooks/useWow";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { client } from "../../../../sanity/lib/client";
-import { urlForImage } from "../../../../sanity/lib/image";
+// import { urlForImage } from "../../../../sanity/lib/image";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { slugify } from "@/utils/helpers";
@@ -80,6 +80,8 @@ const BlogPage = () => {
     fetchLatestPost();
   }, []);
 
+  console.log(post, "post");
+
   return (
     <>
       <MainLayout>
@@ -134,7 +136,7 @@ const BlogPage = () => {
                   <img
                     src={
                       post
-                        ? urlForImage(post?.mainImage).url()
+                        ? ""
                         : "/assets/img/innerpage/blog-details-thumb-img.jpg"
                     }
                     alt={post?.mainImageAlt}
@@ -266,7 +268,8 @@ export const myPortableTextComponents = {
   types: {
     image: ({ value }) => (
       <Image
-        src={urlForImage(value).url()}
+        // src={urlForImage(value).url()}
+        src={value.asset.url}
         alt="Post"
         width={700}
         height={700}

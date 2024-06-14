@@ -8,11 +8,7 @@ const RecentPost = ({ post }) => {
       <div className="recent-post-img">
         <Link href={`/blog/${post.slug.current}`}>
           <img
-            src={
-              post
-                ? urlForImage(post?.mainImage).url()
-                : "/assets/img/innerpage/popular-post-img1.png"
-            }
+            src={post ? "" : "/assets/img/innerpage/popular-post-img1.png"}
             alt={post?.mainImageAlt}
           />
         </Link>

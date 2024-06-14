@@ -1,11 +1,73 @@
-"use client"
+"use client";
 import MainLayout from "@/components/layout/MainLayout";
 import useWow from "@/hooks/useWow";
 import Link from "next/link";
+import { client } from "../../../sanity/lib/client";
+import { useEffect, useState } from "react";
 
+const getPost = async (page, pageSize, searchTerm = "") => {
+  const start = (page - 1) * pageSize;
+  const end = page * pageSize;
+
+  // Escape special characters in the search term to prevent GROQ injection
+  const escapedSearchTerm = searchTerm.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
+
+  const query = `
+    *[_type == "blog" && (
+      title match "${escapedSearchTerm}*" ||
+      "${escapedSearchTerm}" in tags
+    )]{
+      title,
+      slug,
+      description,
+      mainImage {
+        asset->{
+          _id,
+          url
+        }
+      },
+      category,
+      date,
+      tags,
+      "totalPosts": count(*[_type == "blog" && (
+        title match "${escapedSearchTerm}*" ||
+        "${escapedSearchTerm}" in tags
+      )])
+    }[${start}...${end}]
+  `;
+
+  const response = await client.fetch(query);
+  console.log(response);
+  return response;
+};
 
 const Blogpage = () => {
-  useWow()
+  useWow();
+  const [posts, setPosts] = useState([]);
+
+  const [page, setPage] = useState(1);
+
+  const totalPosts = posts[0]?.totalPosts;
+  const pageSize = 3;
+  const totalPages = Math.ceil(totalPosts / pageSize);
+
+  const setPageNumber = (page) => {
+    setPage(page);
+  };
+  const handleNextPage = () => {
+    console.log(page, totalPages);
+    if (totalPages > page) setPage((prev) => prev + 1);
+  };
+
+  const fetchData = async (value) => {
+    const response = await getPost(page, pageSize, value ? value : "");
+    setPosts(response);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [page]);
+
   return (
     <MainLayout>
       <div
@@ -14,456 +76,65 @@ const Blogpage = () => {
       >
         <div className="container">
           <div className="row g-4 mb-50">
-            <div
-              className="col-lg-4 col-md-6 wow animate fadeInDown"
-              data-wow-delay="200ms"
-              data-wow-duration="1500ms"
-            >
-              <div className="blog-card style-2">
-                <div className="blog-card-img-wrap">
-                  <Link href="/blog/blog-details" className="card-img">
-                    <img src="assets/img/home3/blog-img1.jpg" alt="" />
-                  </Link>
-                  <Link href="/blog" className="date">
-                    <span>
-                      <strong>15</strong> January
-                    </span>
-                  </Link>
-                </div>
-                <div className="card-content">
-                  <div className="blog-meta">
-                    <ul className="category">
-                      <li>
-                        <Link href="/blog">Development</Link>
-                      </li>
-                    </ul>
-                    <div className="blog-comment">
-                      <span>Comment (20)</span>
-                    </div>
-                  </div>
-                  <h4>
-                    <Link href="/blog/blog-details">
-                      Decoding the Cloud A Deep Dive into SaaS Trends.
-                    </Link>
-                  </h4>
-                  <Link href="/blog/blog-details" className="read-more-btn">
-                    Read More
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={10}
-                      height={10}
-                      viewBox="0 0 10 10"
+            {posts.map((post, index) => (
+              <div
+                className="col-lg-4 col-md-6 wow animate fadeInDown"
+                data-wow-delay={`${(index + 1) * 200}ms`}
+                data-wow-duration="1500ms"
+              >
+                <div className="blog-card style-2">
+                  <div className="blog-card-img-wrap">
+                    <Link
+                      href={`/blog/${post.slug.current}`}
+                      className="card-img"
                     >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M8.48878 0.885308L0 9.37364L0.626356 10L9.11469 1.51122V7.38037H10V0H2.61963V0.885308H8.48878Z"
-                      />
-                    </svg>
-                  </Link>
+                      <img src="assets/img/home3/blog-img1.jpg" alt="" />
+                    </Link>
+                    <Link href={`/blog/${post.slug.current}`} className="date">
+                      <span>
+                        <strong>{new Date(post?.date).getDay()}</strong>{" "}
+                        {monthNames[new Date(post?.date).getMonth()]}
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="card-content">
+                    <div className="blog-meta">
+                      <ul className="category">
+                        <Link href={`/blog/${post.slug.current}`}>
+                          {post.category}
+                        </Link>
+                      </ul>
+                      <div className="blog-comment">
+                        <span>Comment (20)</span>
+                      </div>
+                    </div>
+                    <h4>
+                      <Link href={`/blog/${post.slug.current}`}>
+                        {post.title}
+                      </Link>
+                    </h4>
+                    <Link
+                      href={`/blog/${post.slug.current}`}
+                      className="read-more-btn"
+                    >
+                      Read More
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={10}
+                        height={10}
+                        viewBox="0 0 10 10"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M8.48878 0.885308L0 9.37364L0.626356 10L9.11469 1.51122V7.38037H10V0H2.61963V0.885308H8.48878Z"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              className="col-lg-4 col-md-6 wow animate fadeInDown"
-              data-wow-delay="400ms"
-              data-wow-duration="1500ms"
-            >
-              <div className="blog-card style-2">
-                <div className="blog-card-img-wrap">
-                  <Link href="/blog/blog-details" className="card-img">
-                    <img src="assets/img/home3/blog-img2.jpg" alt="" />
-                  </Link>
-                  <Link href="/blog" className="date">
-                    <span>
-                      <strong>20</strong> April
-                    </span>
-                  </Link>
-                </div>
-                <div className="card-content">
-                  <div className="blog-meta">
-                    <ul className="category">
-                      <li>
-                        <Link href="/blog">Cyber Security</Link>
-                      </li>
-                    </ul>
-                    <div className="blog-comment">
-                      <span>Comment (12)</span>
-                    </div>
-                  </div>
-                  <h4>
-                    <Link href="/blog/blog-details">
-                      Mastering Efiecy Tips and Tricks with our Zenfy.
-                    </Link>
-                  </h4>
-                  <Link href="/blog/blog-details" className="read-more-btn">
-                    Read More
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={10}
-                      height={10}
-                      viewBox="0 0 10 10"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M8.48878 0.885308L0 9.37364L0.626356 10L9.11469 1.51122V7.38037H10V0H2.61963V0.885308H8.48878Z"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-4 col-md-6 wow animate fadeInDown"
-              data-wow-delay="600ms"
-              data-wow-duration="1500ms"
-            >
-              <div className="blog-card style-2">
-                <div className="blog-card-img-wrap">
-                  <Link href="/blog/blog-details" className="card-img">
-                    <img src="assets/img/home3/blog-img3.jpg" alt="" />
-                  </Link>
-                  <Link href="/blog" className="date">
-                    <span>
-                      <strong>25</strong> April
-                    </span>
-                  </Link>
-                </div>
-                <div className="card-content">
-                  <div className="blog-meta">
-                    <ul className="category">
-                      <li>
-                        <Link href="/blog">Cyber Security</Link>
-                      </li>
-                    </ul>
-                    <div className="blog-comment">
-                      <span>Comment (25)</span>
-                    </div>
-                  </div>
-                  <h4>
-                    <Link href="/blog/blog-details">
-                      From Ideas How Xtore Transforms Workflows.
-                    </Link>
-                  </h4>
-                  <Link href="/blog/blog-details" className="read-more-btn">
-                    Read More
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={10}
-                      height={10}
-                      viewBox="0 0 10 10"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M8.48878 0.885308L0 9.37364L0.626356 10L9.11469 1.51122V7.38037H10V0H2.61963V0.885308H8.48878Z"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-4 col-md-6 wow animate fadeInDown"
-              data-wow-delay="600ms"
-              data-wow-duration="1500ms"
-            >
-              <div className="blog-card style-2">
-                <div className="blog-card-img-wrap">
-                  <Link href="/blog/blog-details" className="card-img">
-                    <img src="assets/img/home1/blog-img1.jpg" alt="" />
-                  </Link>
-                  <Link href="/blog" className="date">
-                    <span>
-                      <strong>20</strong> May
-                    </span>
-                  </Link>
-                </div>
-                <div className="card-content">
-                  <div className="blog-meta">
-                    <ul className="category">
-                      <li>
-                        <Link href="/blog">Development</Link>
-                      </li>
-                    </ul>
-                    <div className="blog-comment">
-                      <span>Comment (28)</span>
-                    </div>
-                  </div>
-                  <h4>
-                    <Link href="/blog/blog-details">
-                      How to Been population the Startup Company of this.
-                    </Link>
-                  </h4>
-                  <Link href="/blog/blog-details" className="read-more-btn">
-                    Read More
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={10}
-                      height={10}
-                      viewBox="0 0 10 10"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M8.48878 0.885308L0 9.37364L0.626356 10L9.11469 1.51122V7.38037H10V0H2.61963V0.885308H8.48878Z"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-4 col-md-6 wow animate fadeInDown"
-              data-wow-delay="400ms"
-              data-wow-duration="1500ms"
-            >
-              <div className="blog-card style-2">
-                <div className="blog-card-img-wrap">
-                  <Link href="/blog/blog-details" className="card-img">
-                    <img src="assets/img/home1/blog-img2.jpg" alt="" />
-                  </Link>
-                  <Link href="/blog" className="date">
-                    <span>
-                      <strong>15</strong> May
-                    </span>
-                  </Link>
-                </div>
-                <div className="card-content">
-                  <div className="blog-meta">
-                    <ul className="category">
-                      <li>
-                        <Link href="/blog">Cyber Security</Link>
-                      </li>
-                    </ul>
-                    <div className="blog-comment">
-                      <span>Comment (22)</span>
-                    </div>
-                  </div>
-                  <h4>
-                    <Link href="/blog/blog-details">
-                      How to Start and Grow Your Owner Startup Company.
-                    </Link>
-                  </h4>
-                  <Link href="/blog/blog-details" className="read-more-btn">
-                    Read More
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={10}
-                      height={10}
-                      viewBox="0 0 10 10"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M8.48878 0.885308L0 9.37364L0.626356 10L9.11469 1.51122V7.38037H10V0H2.61963V0.885308H8.48878Z"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-4 col-md-6 wow animate fadeInDown"
-              data-wow-delay="200ms"
-              data-wow-duration="1500ms"
-            >
-              <div className="blog-card style-2">
-                <div className="blog-card-img-wrap">
-                  <Link href="/blog/blog-details" className="card-img">
-                    <img src="assets/img/home1/blog-img3.jpg" alt="" />
-                  </Link>
-                  <Link href="/blog" className="date">
-                    <span>
-                      <strong>12</strong> June
-                    </span>
-                  </Link>
-                </div>
-                <div className="card-content">
-                  <div className="blog-meta">
-                    <ul className="category">
-                      <li>
-                        <Link href="/blog">Consulting</Link>
-                      </li>
-                    </ul>
-                    <div className="blog-comment">
-                      <span>Comment (30)</span>
-                    </div>
-                  </div>
-                  <h4>
-                    <Link href="/blog/blog-details">
-                      Innovation The Power of an Startup Company business.
-                    </Link>
-                  </h4>
-                  <Link href="/blog/blog-details" className="read-more-btn">
-                    Read More
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={10}
-                      height={10}
-                      viewBox="0 0 10 10"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M8.48878 0.885308L0 9.37364L0.626356 10L9.11469 1.51122V7.38037H10V0H2.61963V0.885308H8.48878Z"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-4 col-md-6 wow animate fadeInDown"
-              data-wow-delay="400ms"
-              data-wow-duration="1500ms"
-            >
-              <div className="blog-card style-2">
-                <div className="blog-card-img-wrap">
-                  <Link href="/blog/blog-details" className="card-img">
-                    <img src="assets/img/innerpage/blog-img1.jpg" alt="" />
-                  </Link>
-                  <Link href="/blog" className="date">
-                    <span>
-                      <strong>05</strong> January
-                    </span>
-                  </Link>
-                </div>
-                <div className="card-content">
-                  <div className="blog-meta">
-                    <ul className="category">
-                      <li>
-                        <Link href="/blog">Cyber Security</Link>
-                      </li>
-                    </ul>
-                    <div className="blog-comment">
-                      <span>Comment (20)</span>
-                    </div>
-                  </div>
-                  <h4>
-                    <Link href="/blog/blog-details">
-                      Innovation The Power of an Startup Company business.
-                    </Link>
-                  </h4>
-                  <Link href="/blog/blog-details" className="read-more-btn">
-                    Read More
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={10}
-                      height={10}
-                      viewBox="0 0 10 10"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M8.48878 0.885308L0 9.37364L0.626356 10L9.11469 1.51122V7.38037H10V0H2.61963V0.885308H8.48878Z"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-4 col-md-6 wow animate fadeInDown"
-              data-wow-delay="600ms"
-              data-wow-duration="1500ms"
-            >
-              <div className="blog-card style-2">
-                <div className="blog-card-img-wrap">
-                  <Link href="/blog/blog-details" className="card-img">
-                    <img src="assets/img/innerpage/blog-img2.jpg" alt="" />
-                  </Link>
-                  <Link href="/blog" className="date">
-                    <span>
-                      <strong>10</strong> January
-                    </span>
-                  </Link>
-                </div>
-                <div className="card-content">
-                  <div className="blog-meta">
-                    <ul className="category">
-                      <li>
-                        <Link href="/blog">Development</Link>
-                      </li>
-                    </ul>
-                    <div className="blog-comment">
-                      <span>Comment (15)</span>
-                    </div>
-                  </div>
-                  <h4>
-                    <Link href="/blog/blog-details">
-                      Looking For Inspiration &amp; Unique Traveling The World.
-                    </Link>
-                  </h4>
-                  <Link href="/blog/blog-details" className="read-more-btn">
-                    Read More
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={10}
-                      height={10}
-                      viewBox="0 0 10 10"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M8.48878 0.885308L0 9.37364L0.626356 10L9.11469 1.51122V7.38037H10V0H2.61963V0.885308H8.48878Z"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-4 col-md-6 wow animate fadeInDown"
-              data-wow-delay="800ms"
-              data-wow-duration="1500ms"
-            >
-              <div className="blog-card style-2">
-                <div className="blog-card-img-wrap">
-                  <Link href="/blog/blog-details" className="card-img">
-                    <img src="assets/img/innerpage/blog-img3.jpg" alt="" />
-                  </Link>
-                  <Link href="/blog" className="date">
-                    <span>
-                      <strong>18</strong> January
-                    </span>
-                  </Link>
-                </div>
-                <div className="card-content">
-                  <div className="blog-meta">
-                    <ul className="category">
-                      <li>
-                        <Link href="/blog">Consulting</Link>
-                      </li>
-                    </ul>
-                    <div className="blog-comment">
-                      <span>Comment (12)</span>
-                    </div>
-                  </div>
-                  <h4>
-                    <Link href="/blog/blog-details">
-                      The complete guide unlocking your team’s power.
-                    </Link>
-                  </h4>
-                  <Link href="/blog/blog-details" className="read-more-btn">
-                    Read More
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={10}
-                      height={10}
-                      viewBox="0 0 10 10"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M8.48878 0.885308L0 9.37364L0.626356 10L9.11469 1.51122V7.38037H10V0H2.61963V0.885308H8.48878Z"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
           <div className="row">
             <div
@@ -473,17 +144,22 @@ const Blogpage = () => {
             >
               <div className="pagination-area">
                 <ul className="paginations">
-                  <li className="page-item active">
-                    <a href="#">01</a>
-                  </li>
-                  <li className="page-item">
-                    <a href="#">02</a>
-                  </li>
-                  <li className="page-item">
-                    <a href="#">03</a>
-                  </li>
-                  <li className="page-item paginations-button">
-                    <a href="#">
+                  {Array.from({ length: totalPages }, (_, i) => (
+                    <li
+                      key={i}
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setPageNumber(i + 1)}
+                      className={`page-item ${page === i + 1 ? "active" : ""}`}
+                    >
+                      <a>{i + 1}</a>
+                    </li>
+                  ))}
+                  <li
+                    onClick={handleNextPage}
+                    style={{ cursor: "pointer" }}
+                    className="page-item paginations-button"
+                  >
+                    <a>
                       NXT
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -506,3 +182,18 @@ const Blogpage = () => {
 };
 
 export default Blogpage;
+
+const monthNames = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
