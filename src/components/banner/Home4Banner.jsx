@@ -27,8 +27,8 @@ const Home4Banner = () => {
                     introduct the.
                   </p>
                   <div className="banner-btn">
-                    <span onClick={() => setPopup(true)}>
-                      <div style={{ display: "hidden" }} className="bg">
+                    <a href="#get-in-touch" onClick={() => setPopup(true)}>
+                      <div className="bg">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width={201}
@@ -45,7 +45,7 @@ const Home4Banner = () => {
                           <polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" />
                         </svg>
                       </div>
-                    </span>
+                    </a>
                   </div>
                 </div>
                 <div className="scroll-down-btn">
