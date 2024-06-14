@@ -49,8 +49,8 @@ const Home4experience = () => {
                   <div className="content">
                     <h4>Discovery</h4>
                     <p>
-                      Welcome to Zenfy, where’r digital agi innovation meet
-                      strategic expensive dynamic force in the.
+                    We begin by understanding your unique needs and goals, conducting thorough research to uncover opportunities and challenges. This phase sets the foundation for a tailored solution that aligns with your vision.
+
                     </p>
                   </div>
                   <div className="number">
@@ -73,8 +73,8 @@ const Home4experience = () => {
                   <div className="content">
                     <h4>Strategy</h4>
                     <p>
-                      Welcome to Zenfy, where’r digital agi innovation meet
-                      strategic expensive dynamic force in the.
+                    Our experts craft a strategic plan that outlines the roadmap to achieve your objectives. We focus on innovative approaches and best practices to ensure effective and efficient implementation.
+
                     </p>
                   </div>
                   <div className="number">
@@ -97,8 +97,8 @@ const Home4experience = () => {
                   <div className="content">
                     <h4>Development</h4>
                     <p>
-                      Welcome to Zenfy, where’r digital agi innovation meet
-                      strategic expensive dynamic force in the.
+                    In this phase, our skilled developers bring the strategy to life, creating robust, scalable, and high-performance solutions. We prioritize quality and user experience to deliver exceptional results.
+
                     </p>
                   </div>
                   <div className="number">

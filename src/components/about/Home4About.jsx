@@ -37,15 +37,12 @@ const Home4About = () => {
                     Unveiling Work Zenfy
                   </span>
                   <h2>
-                    We are a Creative agency working with young talents on
-                    delivering unique ideas and creative work.
+                  We are a tech company working with, up and coming talents to develop solutions and original concepts.
                   </h2>
                   <p>
-                    Where innovation meets passion in a journey that started
-                    with a simple idea and a shared dr. Founded in recent year
-                    we embarked on a mission to bring the new innovation and
-                    introduct the technology. From humble beginnings to our
-                    current aspirations.
+                  Fueled by creativity and enthusiasm our venture began with a concept and a common goal.
+                  Founded recently our aim is to lead the way, in technologies and innovations. Starting 
+                  from origins we aspire to achieve milestones in the future.
                   </p>
                 </div>
                 <Link href="/about" className="explore-btn">
@@ -83,30 +80,20 @@ const Home4About = () => {
                   <span className="badge__char">T</span>
                   <span className="badge__char">O</span>
                   <span className="badge__char" />
-                  <span className="badge__char">Z</span>
-                  <span className="badge__char">E</span>
-                  <span className="badge__char">N</span>
-                  <span className="badge__char">F</span>
-                  <span className="badge__char">Y</span>
-                  <span className="badge__char">*</span>
-                  <span className="badge__char">M</span>
-                  <span className="badge__char">E</span>
-                  <span className="badge__char">E</span>
-                  <span className="badge__char">T</span>
-                  <span className="badge__char">S</span>
-                  <span className="badge__char" />
-                  <span className="badge__char">E</span>
-                  <span className="badge__char">X</span>
-                  <span className="badge__char">E</span>
-                  <span className="badge__char">C</span>
+                  <span className="badge__char">Q</span>
                   <span className="badge__char">U</span>
-                  <span className="badge__char">T</span>
-                  <span className="badge__char">I</span>
-                  <span className="badge__char">O</span>
+                  <span className="badge__char">A</span>
                   <span className="badge__char">N</span>
+                  <span className="badge__char">T</span>
+                  <span className="badge__char">U</span>
+                  <span className="badge__char">M</span>
+                  <span className="badge__char" />
+                  <span className="badge__char">H</span>
+                  <span className="badge__char">I</span>
+                  <span className="badge__char">V</span>
+                  <span className="badge__char">E</span>
+                  <span className="badge__char" />
                   <span className="badge__char">*</span>
-                  <span className="badge__char">O</span>
-                  <span className="badge__char">F</span>
                   <span className="badge__char" />
                   <span className="badge__char">C</span>
                   <span className="badge__char">R</span>
@@ -118,7 +105,27 @@ const Home4About = () => {
                   <span className="badge__char">I</span>
                   <span className="badge__char">T</span>
                   <span className="badge__char">Y</span>
+                  <span className="badge__char" />
+                  <span className="badge__char">M</span>
+                  <span className="badge__char">E</span>
+                  <span className="badge__char">E</span>
+                  <span className="badge__char">T</span>
+                  <span className="badge__char">S</span>
+                  <span className="badge__char" />
                   <span className="badge__char">*</span>
+                  <span className="badge__char" />
+                  <span className="badge__char">E</span>
+                  <span className="badge__char">X</span>
+                  <span className="badge__char">E</span>
+                  <span className="badge__char">C</span>  
+                  <span className="badge__char">U</span>  
+                  <span className="badge__char">T</span>
+                  <span className="badge__char">I</span>
+                  <span className="badge__char">O</span>
+                  <span className="badge__char">N</span>
+                  <span className="badge__char" />
+                  <span className="badge__char">*</span>
+                  <span className="badge__char" />
                   <div className="inner-circle"></div>
                 </div>
                 <div className="half-circle-img-area">
