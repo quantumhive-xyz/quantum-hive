@@ -16,15 +16,12 @@ const Home4Banner = () => {
             <div className="col-xl-10">
               <div className="banner-wrapper">
                 <h1>
-                  Where Vision Takes <br />
-                  <span>Flight Creative</span> Design Beyond Limits
+                Transforming Ideas into <br />
+                  <span> Digital Solutions</span> 
                 </h1>
                 <div className="banner-content-and-btn">
                   <p>
-                    Where innovation meets passion in a journey that started
-                    with simpo idea and a shared dr. Founded in recent year we
-                    embarked one anda mission to bring the new innovation and
-                    introduct the.
+                  At Quantum Hive Inc., we excel in advanced technological solutions. From custom software and blockchain development to AI integration and ecommerce platforms, we empower businesses to innovate and thrive in today's digital landscape. Our expertise transforms ideas into scalable, high-performance solutions, driving success with a commitment to quality and innovation.
                   </p>
                   <div className="banner-btn">
                     <span onClick={() => setPopup(true)}>
@@ -97,8 +94,7 @@ const Home4Banner = () => {
         </ul>
         <div className="scroll-text">
           <h2>
-            We are a creative agency We are a creative agency We are a creative
-            agency
+          Software Development  Blockchain Integration  Ecommerce  UI/UX Design  AI Integration  Website Development  Mobile App Development  SEO Expertise
           </h2>
         </div>
       </div>

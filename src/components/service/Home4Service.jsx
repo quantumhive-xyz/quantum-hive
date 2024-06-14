@@ -77,7 +77,8 @@ const Home4Service = () => {
                       <span>01</span>
                     </div>
                   </div>
-                  <h5>Brand Identity </h5>
+                  <h5>Custom Software Development
+                  </h5>
                   <div className="services-img">
                     <img src="assets/img/home4/services-01.jpg" alt="" />
                   </div>
@@ -87,10 +88,10 @@ const Home4Service = () => {
                       providing expert advice and guidance.
                     </p>
                     <ul className="tag-list">
-                      <li>Logo Design</li>
-                      <li>Brand Guidelines</li>
-                      <li>Visual Identity</li>
-                      <li>Logo Design</li>
+                      <li>Tailored Solutions</li>
+                      <li>Scalable Applications</li>
+                      <li>Agile Development</li>
+                      <li>Cross-platform Compatibility</li>
                     </ul>
                   </div>
                   <div className="button-area">
@@ -139,7 +140,7 @@ const Home4Service = () => {
                       <span>02</span>
                     </div>
                   </div>
-                  <h5>Graphic Design</h5>
+                  <h5>Blockchain</h5>
                   <div className="services-img">
                     <img src="assets/img/home4/services-02.jpg" alt="" />
                   </div>
@@ -149,10 +150,10 @@ const Home4Service = () => {
                       strategies to increase revenue and market share.
                     </p>
                     <ul className="tag-list">
-                      <li>Print Collateral</li>
-                      <li>Digital Graphics</li>
-                      <li>Infographics</li>
-                      <li>Print Collateral </li>
+                      <li>Decentralized Solutions</li>
+                      <li>Smart Contracts</li>
+                      <li>Cryptocurrency Integration</li>
+                      <li>Security Solutions</li>
                     </ul>
                   </div>
                   <div className="button-area">
@@ -192,7 +193,7 @@ const Home4Service = () => {
                       <span>03</span>
                     </div>
                   </div>
-                  <h5>Web Design</h5>
+                  <h5>Artificial Intelligence</h5>
                   <div className="services-img">
                     <img src="assets/img/home4/services-03.jpg" alt="" />
                   </div>
@@ -202,10 +203,10 @@ const Home4Service = () => {
                       strategies to increase revenue and market share.
                     </p>
                     <ul className="tag-list">
-                      <li>Website Design</li>
-                      <li>Responsive Web</li>
-                      <li>Ui/Ux Design</li>
-                      <li>Logo Design</li>
+                      <li>Machine Learning</li>
+                      <li>NLP Solutions</li>
+                      <li>Automation Services</li>
+                      <li>Predictive Analytics</li>
                     </ul>
                   </div>
                   <div className="button-area">
@@ -245,7 +246,7 @@ const Home4Service = () => {
                       <span>04</span>
                     </div>
                   </div>
-                  <h5>Digital Marketing</h5>
+                  <h5>Ecommerce</h5>
                   <div className="services-img">
                     <img src="assets/img/home4/services-04.jpg" alt="" />
                   </div>
@@ -255,10 +256,10 @@ const Home4Service = () => {
                       strategies to increase revenue and market share.
                     </p>
                     <ul className="tag-list">
-                      <li>Social Media</li>
-                      <li>Email Marketing</li>
-                      <li>Banner Ad</li>
-                      <li>Print Collateral</li>
+                      <li>Online Store</li>
+                      <li>Payment Integration</li>
+                      <li>Scalable Platforms</li>
+                      <li>UX Optimization</li>
                     </ul>
                   </div>
                   <div className="button-area">
@@ -315,7 +316,7 @@ const Home4Service = () => {
                       <span>05</span>
                     </div>
                   </div>
-                  <h5>Content Creation</h5>
+                  <h5>UI/UX Design</h5>
                   <div className="services-img">
                     <img src="assets/img/home4/services-05.jpg" alt="" />
                   </div>
@@ -325,10 +326,116 @@ const Home4Service = () => {
                       strategies to increase revenue and market share.
                     </p>
                     <ul className="tag-list">
-                      <li>Copywriting</li>
-                      <li>Content Strategy</li>
-                      <li>Article Writing</li>
-                      <li>Logo Design </li>
+                     <li>User-centric</li>
+                     <li>Responsive Design</li>
+                     <li>Prototyping Wireframing</li>
+                     <li>Visual Expertise</li>
+                    </ul>
+                  </div>
+                  <div className="button-area">
+                    <Link
+                      className="explore-btn"
+                      href="/service/service-details"
+                    >
+                      Learn More
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={12}
+                        height={12}
+                        viewBox="0 0 12 12"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M10.1865 1.06237L0 11.2484L0.751627 12L10.9376 1.81347V8.85645H12V0H3.14355V1.06237H10.1865Z"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+                <div className="single-services mb-20">
+                  <div className="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={40}
+                      height={40}
+                      viewBox="0 0 40 40"
+                    >
+                      <g>
+                        <path d="M38.9619 26.5052V26.436C39.654 24.4291 40 22.2837 40 20C40 16.8166 39.2388 13.8408 37.9239 11.1419C37.9239 11.1419 37.9239 11.0727 37.8547 11.0727C35.5017 6.36678 31.4187 2.69896 26.3668 1.03806H26.2976C24.2907 0.346021 22.1453 0 19.8616 0C16.6782 0 13.7024 0.761246 11.0035 2.07612C11.0035 2.07612 10.9343 2.07612 10.9343 2.14533C6.36678 4.35986 2.76817 8.51211 1.03806 13.4948V13.564C0.346021 15.5709 0 17.7163 0 20C0 23.1834 0.761246 26.1592 2.07612 28.8581C2.07612 28.8581 2.07612 28.9273 2.14533 28.9273C4.49827 33.6332 8.58131 37.301 13.6332 38.9619H13.7024C15.7093 39.654 17.8547 40 20.1384 40C23.3218 40 26.2976 39.2388 28.9965 37.9239C28.9965 37.9239 29.0657 37.9239 29.0657 37.8547C33.6332 35.6401 37.2318 31.4879 38.9619 26.5052ZM28.7197 36.5398L19.1003 26.9204H22.5606H37.3702C35.7093 31.0035 32.6644 34.4637 28.7197 36.5398ZM14.4637 17.7163L17.7163 14.4637H22.2837L25.5363 17.7163V22.2837L22.2837 25.5363H17.7163L14.4637 22.2837V17.7163ZM37.8547 25.5363H24.2215L26.6436 23.1142L37.0934 12.6644C38.1315 14.8789 38.6851 17.3702 38.6851 20C38.6851 21.9377 38.4083 23.737 37.8547 25.5363ZM36.5398 11.2803L26.9204 20.8997V17.4394V2.62976C31.0035 4.29066 34.4637 7.33564 36.5398 11.2803ZM25.5363 2.14533V15.7785L23.1142 13.3564L12.5952 2.83737C14.8789 1.86851 17.3702 1.31488 20 1.31488C21.9377 1.31488 23.737 1.5917 25.5363 2.14533ZM11.2803 3.46021L20.8997 13.0796H17.4394H2.62976C4.29066 8.99654 7.33564 5.53633 11.2803 3.46021ZM2.14533 14.4637H15.7785L13.3564 16.8858L2.83737 27.4048C1.86851 25.1211 1.31488 22.6298 1.31488 20C1.31488 18.0623 1.5917 16.263 2.14533 14.4637ZM3.46021 28.7197L13.0796 19.1003V22.5606V37.3702C8.99654 35.7093 5.53633 32.6644 3.46021 28.7197ZM14.4637 37.8547V24.2215L16.8858 26.6436L27.3356 37.0934C25.1211 38.1315 22.6298 38.6851 20 38.6851C18.0623 38.6851 16.263 38.4083 14.4637 37.8547Z" />
+                      </g>
+                    </svg>
+                    <div className="number">
+                      <span>06</span>
+                    </div>
+                  </div>
+                  <h5>Website Development</h5>
+                  <div className="services-img">
+                    <img src="assets/img/home4/services-06.jpg" alt="" />
+                  </div>
+                  <div className="content">
+                    <p>
+                      Helping clients improve their marketing and sales
+                      strategies to increase revenue and market share.
+                    </p>
+                    <ul className="tag-list">
+                      <li>Responsive Design</li>
+                      <li>CMS Integration</li>
+                      <li>Front-end Back-end</li>
+                      <li>Performance Optimization</li>
+                    </ul>
+                  </div>
+                  <div className="button-area">
+                    <Link
+                      className="explore-btn"
+                      href="/service/service-details"
+                    >
+                      Learn More
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={12}
+                        height={12}
+                        viewBox="0 0 12 12"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M10.1865 1.06237L0 11.2484L0.751627 12L10.9376 1.81347V8.85645H12V0H3.14355V1.06237H10.1865Z"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+                <div className="single-services mb-20">
+                  <div className="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={40}
+                      height={40}
+                      viewBox="0 0 40 40"
+                    >
+                      <g>
+                        <path d="M38.9619 26.5052V26.436C39.654 24.4291 40 22.2837 40 20C40 16.8166 39.2388 13.8408 37.9239 11.1419C37.9239 11.1419 37.9239 11.0727 37.8547 11.0727C35.5017 6.36678 31.4187 2.69896 26.3668 1.03806H26.2976C24.2907 0.346021 22.1453 0 19.8616 0C16.6782 0 13.7024 0.761246 11.0035 2.07612C11.0035 2.07612 10.9343 2.07612 10.9343 2.14533C6.36678 4.35986 2.76817 8.51211 1.03806 13.4948V13.564C0.346021 15.5709 0 17.7163 0 20C0 23.1834 0.761246 26.1592 2.07612 28.8581C2.07612 28.8581 2.07612 28.9273 2.14533 28.9273C4.49827 33.6332 8.58131 37.301 13.6332 38.9619H13.7024C15.7093 39.654 17.8547 40 20.1384 40C23.3218 40 26.2976 39.2388 28.9965 37.9239C28.9965 37.9239 29.0657 37.9239 29.0657 37.8547C33.6332 35.6401 37.2318 31.4879 38.9619 26.5052ZM28.7197 36.5398L19.1003 26.9204H22.5606H37.3702C35.7093 31.0035 32.6644 34.4637 28.7197 36.5398ZM14.4637 17.7163L17.7163 14.4637H22.2837L25.5363 17.7163V22.2837L22.2837 25.5363H17.7163L14.4637 22.2837V17.7163ZM37.8547 25.5363H24.2215L26.6436 23.1142L37.0934 12.6644C38.1315 14.8789 38.6851 17.3702 38.6851 20C38.6851 21.9377 38.4083 23.737 37.8547 25.5363ZM36.5398 11.2803L26.9204 20.8997V17.4394V2.62976C31.0035 4.29066 34.4637 7.33564 36.5398 11.2803ZM25.5363 2.14533V15.7785L23.1142 13.3564L12.5952 2.83737C14.8789 1.86851 17.3702 1.31488 20 1.31488C21.9377 1.31488 23.737 1.5917 25.5363 2.14533ZM11.2803 3.46021L20.8997 13.0796H17.4394H2.62976C4.29066 8.99654 7.33564 5.53633 11.2803 3.46021ZM2.14533 14.4637H15.7785L13.3564 16.8858L2.83737 27.4048C1.86851 25.1211 1.31488 22.6298 1.31488 20C1.31488 18.0623 1.5917 16.263 2.14533 14.4637ZM3.46021 28.7197L13.0796 19.1003V22.5606V37.3702C8.99654 35.7093 5.53633 32.6644 3.46021 28.7197ZM14.4637 37.8547V24.2215L16.8858 26.6436L27.3356 37.0934C25.1211 38.1315 22.6298 38.6851 20 38.6851C18.0623 38.6851 16.263 38.4083 14.4637 37.8547Z" />
+                      </g>
+                    </svg>
+                    <div className="number">
+                      <span>07</span>
+                    </div>
+                  </div>
+                  <h5>Mobile App Development</h5>
+                  <div className="services-img">
+                    <img src="assets/img/home4/services-06.jpg" alt="" />
+                  </div>
+                  <div className="content">
+                    <p>
+                      Helping clients improve their marketing and sales
+                      strategies to increase revenue and market share.
+                    </p>
+                    <ul className="tag-list">
+                        <li>iOS Android</li>
+                        <li>Native Hybrid</li>
+                        <li>User-friendly</li>
+                        <li>Maintenance Support</li>
                     </ul>
                   </div>
                   <div className="button-area">
@@ -365,10 +472,10 @@ const Home4Service = () => {
                       </g>
                     </svg>
                     <div className="number">
-                      <span>06</span>
+                      <span>08</span>
                     </div>
                   </div>
-                  <h5>Video Production</h5>
+                  <h5>SEO (Search Engine Optimization)</h5>
                   <div className="services-img">
                     <img src="assets/img/home4/services-06.jpg" alt="" />
                   </div>
@@ -378,9 +485,10 @@ const Home4Service = () => {
                       strategies to increase revenue and market share.
                     </p>
                     <ul className="tag-list">
-                      <li>Corporate Videos</li>
-                      <li>Explainer Videos</li>
-                      <li>Animation and Motion</li>
+                        <li>Keyword Research</li>
+                        <li>On-page Off-page</li>
+                        <li>SEO Audits</li>
+                        <li>Traffic Growth</li>
                     </ul>
                   </div>
                   <div className="button-area">
