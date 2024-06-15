@@ -1,4 +1,4 @@
-export const blog = {
+export const industry = {
   name: "industry",
   title: "Industry",
   type: "document",
