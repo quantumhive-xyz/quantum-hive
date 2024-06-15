@@ -1,5 +1,3 @@
-"use client";
-import { useEffect } from "react";
 import { Inter, Roboto_Mono, Hanken_Grotesk } from "next/font/google";
 import "../../public/assets/css/bootstrap-icons.css";
 import "../../public/assets/css/boxicons.min.css";
@@ -15,7 +13,7 @@ import "yet-another-react-lightbox/styles.css";
 import "../../public/assets/css/style.css";
 import "react-toastify/dist/ReactToastify.css";
 import ScrollProgress from "@/components/common/ScrollProgress";
-import useWow from "@/hooks/useWow";
+import BootstrapStyleWrapper from "@/components/BootsrapStyleWrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,12 +26,36 @@ const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hankenGrotesk",
   display: "swap",
 });
-export default function RootLayout({ children }) {
-  useWow();
+const getMetaData = async () => {
+  const query = `*[_type == "metadata" && metadataFor=="home"]{
+      title,
+      description,
+      canonical,
+      openGraph{
+        url,
+        title,
+        description,
+        images[]{
+          url,
+          width,
+          height,
+          alt,
+          type
+        },
+        siteName
+      },
+      twitter{
+        handle,
+        site,
+        cardType
+      }
+    }`;
 
-  useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.bundle.min.js");
-  }, []);
+  const response = await client.fetch(query, { cache: "no-store" });
+  // console.log(response);
+  return response[0];
+};
+export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${hankenGrotesk.variable}`}>
       <head>
@@ -46,9 +68,34 @@ export default function RootLayout({ children }) {
         <title>Zenfy - Software, SaaS &amp; Digital Agency Template</title>
       </head>
       <body className="dark">
-        <ScrollProgress />
-        {children}
+        <BootstrapStyleWrapper>{children}</BootstrapStyleWrapper>
       </body>
     </html>
   );
 }
+
+export let metadata = async () => {
+  const data = await getMetaData();
+
+  // console.log(data);
+
+  const fetchedMetadata = {
+    title: data.title || "MetaGeeks ",
+    description: data.description || "MetaGeeks ",
+    canonical: data.canonical || "",
+    openGraph: {
+      url: data.openGraph?.url || "",
+      title: data.openGraph?.title || "",
+      description: data.openGraph?.description || "",
+      images: data.openGraph?.images || [],
+      siteName: data.openGraph?.siteName || "Default Site Name",
+    },
+    twitter: {
+      handle: data.twitter?.handle || "@handle",
+      site: data.twitter?.site || "@site",
+      cardType: data.twitter?.cardType || "summary_large_image",
+    },
+  };
+
+  return fetchedMetadata;
+};
