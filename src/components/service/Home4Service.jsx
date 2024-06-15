@@ -2,29 +2,29 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
 const Home4Service = () => {
-  const followImageCursor = (event, serviceImgItem) => {
-    const contentBox = serviceImgItem.getBoundingClientRect();
-    const dx = event.clientX - contentBox.x;
-    const dy = event.clientY - contentBox.y;
-    serviceImgItem.children[2].style.transform = `translate(${dx}px, ${dy}px) rotate(20deg)`;
-  };
+   const followImageCursor = (event, serviceImgItem) => {
+     const contentBox = serviceImgItem.getBoundingClientRect();
+     const dx = event.clientX - contentBox.x;
+     const dy = event.clientY - contentBox.y;
+     serviceImgItem.children[2].style.transform = `translate(${dx}px, ${dy}px) rotate(20deg)`;
+   };
 
-  useEffect(() => {
-    const serviceImgItems = document.querySelectorAll(
-      ".sevices-wrap .single-services"
-    );
+   useEffect(() => {
+     const serviceImgItems = document.querySelectorAll(
+       ".sevices-wrap .single-services"
+     );
 
-    const handleMouseMove = (event) => {
-      serviceImgItems.forEach((item) => {
-        followImageCursor(event, item);
-      });
-    };
+     const handleMouseMove = (event) => {
+       serviceImgItems.forEach((item) => {
+         followImageCursor(event, item);
+       });
+     };
 
-    document.addEventListener("mousemove", handleMouseMove);
+     document.addEventListener("mousemove", handleMouseMove);
 
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
+     return () => {
+       document.removeEventListener("mousemove", handleMouseMove);
+     };
   }, []); // Empty dependency array to run the effect only once on mount
   return (
     <>

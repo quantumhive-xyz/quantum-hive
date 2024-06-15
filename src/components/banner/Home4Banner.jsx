@@ -21,7 +21,7 @@ const Home4Banner = () => {
                 </h1>
                 <div className="banner-content-and-btn">
                   <p>
-                  At Quantum Hive Inc., we excel in advanced technological solutions. From custom software and blockchain development to AI integration and ecommerce platforms, we empower businesses to innovate and thrive in today's digital landscape. Our expertise transforms ideas into scalable, high-performance solutions, driving success with a commitment to quality and innovation.
+                  From custom software and blockchain development to AI integration and ecommerce platforms, Our expertise transforms ideas into scalable, high-performance solutions, driving success with a commitment to quality and innovation.
                   </p>
                   <div className="banner-btn">
                     <a href="#get-in-touch" onClick={() => setPopup(true)}>
