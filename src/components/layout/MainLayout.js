@@ -20,7 +20,7 @@ const MainLayout = ({ children }) => {
     (route) => route === pathname
   );
 
-  const words = ["service", "blog", "case-study"];
+  const words = ["service", "blog", "case-study","industry"];
   const regex = new RegExp(`^/(${words.join("|")})/.*$`);
 
   return (
