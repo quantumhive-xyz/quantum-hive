@@ -12,8 +12,8 @@ import "../../public/assets/css/bootstrap.min.css";
 import "yet-another-react-lightbox/styles.css";
 import "../../public/assets/css/style.css";
 import "react-toastify/dist/ReactToastify.css";
-import ScrollProgress from "@/components/common/ScrollProgress";
 import BootstrapStyleWrapper from "@/components/BootsrapStyleWrapper";
+import { client } from "../../sanity/lib/client";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,7 +65,6 @@ export default function RootLayout({ children }) {
           type="image/x-icon"
           sizes="16x16"
         />
-        <title>Zenfy - Software, SaaS &amp; Digital Agency Template</title>
       </head>
       <body className="dark">
         <BootstrapStyleWrapper>{children}</BootstrapStyleWrapper>
