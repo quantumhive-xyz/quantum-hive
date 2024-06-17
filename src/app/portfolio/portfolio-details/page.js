@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import MainLayout from "@/components/layout/MainLayout";
 import useWow from "@/hooks/useWow";
 import Link from "next/link";
 import React from "react";
 
 const PortfolioDetailsPage = () => {
-  useWow()
+  useWow();
   return (
     <MainLayout>
       <div
@@ -223,7 +223,10 @@ const PortfolioDetailsPage = () => {
                       </div>
                       <div className="content">
                         <span>Location:</span>
-                        <h5>7 Lake Street, London</h5>
+                        <h5>
+                          1111b South Governors Avenue Dover DE 19904
+                          United States.
+                        </h5>
                       </div>
                     </li>
                     <li>

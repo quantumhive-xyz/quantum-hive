@@ -33,7 +33,7 @@ const Home5Portfolio = () => {
                   </svg>
                 </span>
                 <h2>
-                  Unveiling the Success <span> Stories at Zenfy.</span>
+                  Unveiling the Success <span> Stories at Quantum Hive.</span>
                 </h2>
                 <p>
                   Feel free adapt this based on the specific managed services,

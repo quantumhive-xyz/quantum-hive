@@ -34,15 +34,17 @@ const Home4About = () => {
                         <circle cx={5} cy={5} r={5} />
                       </g>
                     </svg>
-                    Unveiling Work Zenfy
+                    Unveiling Work Quantum Hive
                   </span>
                   <h2>
-                  We are a tech company working with, up and coming talents to develop solutions and original concepts.
+                    We are a tech company working with, up and coming talents to
+                    develop solutions and original concepts.
                   </h2>
                   <p>
-                  Fueled by creativity and enthusiasm our venture began with a concept and a common goal.
-                  Founded recently our aim is to lead the way, in technologies and innovations. Starting 
-                  from origins we aspire to achieve milestones in the future.
+                    Fueled by creativity and enthusiasm our venture began with a
+                    concept and a common goal. Founded recently our aim is to
+                    lead the way, in technologies and innovations. Starting from
+                    origins we aspire to achieve milestones in the future.
                   </p>
                 </div>
                 <Link href="/about" className="explore-btn">
@@ -117,8 +119,8 @@ const Home4About = () => {
                   <span className="badge__char">E</span>
                   <span className="badge__char">X</span>
                   <span className="badge__char">E</span>
-                  <span className="badge__char">C</span>  
-                  <span className="badge__char">U</span>  
+                  <span className="badge__char">C</span>
+                  <span className="badge__char">U</span>
                   <span className="badge__char">T</span>
                   <span className="badge__char">I</span>
                   <span className="badge__char">O</span>

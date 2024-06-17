@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import MainLayout from "@/components/layout/MainLayout";
 import useWow from "@/hooks/useWow";
 import React from "react";
 
 const ContactPage = () => {
-  useWow()
+  useWow();
   return (
     <MainLayout>
       <div className="contact-page scroll-margin pt-120 mb-120" id="contact">
@@ -132,7 +132,7 @@ const ContactPage = () => {
                       </g>
                     </svg>
                   </span>
-                  <h2>Connect with Zenfy</h2>
+                  <h2>Connect with Quantum Hive</h2>
                   <p>
                     Ready to take the first step towards unlocking
                     opportunities, realizing goals, and embracing innovation?

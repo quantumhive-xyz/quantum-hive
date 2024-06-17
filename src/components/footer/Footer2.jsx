@@ -20,9 +20,9 @@ const Footer2 = () => {
                   </div>
                   <div className="content">
                     <p>
-                      Welcome to Zenfy, where innovation meets our passion in a
-                      journey that started with a simple idea and a shared
-                      dream.
+                      Welcome to Quantum Hive, where innovation meets our
+                      passion in a journey that started with a simple idea and a
+                      shared dream.
                     </p>
                   </div>
                   {/* <ul className="rating-area">
@@ -288,7 +288,7 @@ const Footer2 = () => {
           <div className="footer-bottom">
             <div className="copyright-area">
               <p>
-                Copyright 2024 <a href="#">Zenfy</a> | Design By{" "}
+                Copyright 2024 <a href="#">Quantum Hive</a> | Design By{" "}
                 <a href="https://www.egenslab.com/">Egens Lab</a>
               </p>
             </div>

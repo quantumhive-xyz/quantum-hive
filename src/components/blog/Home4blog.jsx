@@ -1,10 +1,10 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
 const Home4Blog = () => {
   return (
     <>
-     <div className="home4-blog-section mb-130">
+      <div className="home4-blog-section mb-130">
         <div className="container">
           <div
             className="row mb-60 wow animate fadeInDown"
@@ -83,9 +83,9 @@ const Home4Blog = () => {
                             </Link>
                           </h4>
                           <p>
-                            Welcome to Zenfy, where digital innovation meets arg
-                            strategic excellence. As a dynamic force in thereal
-                            on digital marketing, we are dedicated.
+                            Welcome to Quantum Hive, where digital innovation
+                            meets arg strategic excellence. As a dynamic force
+                            in thereal on digital marketing, we are dedicated.
                           </p>
                         </div>
                         <div className="button-area btn_wrapper">
@@ -154,9 +154,9 @@ const Home4Blog = () => {
                             </Link>
                           </h4>
                           <p>
-                            Welcome to Zenfy, where digital innovation meets arg
-                            strategic excellence. As a dynamic force in thereal
-                            on digital marketing, we are dedicated.
+                            Welcome to Quantum Hive, where digital innovation
+                            meets arg strategic excellence. As a dynamic force
+                            in thereal on digital marketing, we are dedicated.
                           </p>
                         </div>
                         <div className="button-area btn_wrapper">
@@ -224,9 +224,9 @@ const Home4Blog = () => {
                             </Link>
                           </h4>
                           <p>
-                            Welcome to Zenfy, where digital innovation meets arg
-                            strategic excellence. As a dynamic force in thereal
-                            on digital marketing, we are dedicated.
+                            Welcome to Quantum Hive, where digital innovation
+                            meets arg strategic excellence. As a dynamic force
+                            in thereal on digital marketing, we are dedicated.
                           </p>
                         </div>
                         <div className="button-area btn_wrapper">
@@ -257,9 +257,9 @@ const Home4Blog = () => {
             </div>
           </div>
         </div>
-      </div> 
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Home4Blog
+export default Home4Blog;

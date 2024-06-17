@@ -160,7 +160,7 @@ const Home4Team = () => {
                       </div>
                       <div className="card-content">
                         <h4>Cassian Coleson</h4>
-                        <span>Founder at, Zenfy</span>
+                        <span>Founder at, Quantum Hive</span>
                       </div>
                     </div>
                   </SwiperSlide>

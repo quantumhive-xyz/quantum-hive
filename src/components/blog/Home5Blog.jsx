@@ -146,7 +146,7 @@ const Home5Blog = () => {
                   </div>
                   <h4>
                     <Link href="/blog/blog-details">
-                      Mastering Efiecy Tips and Tricks with our Zenfy.
+                      Mastering Efiecy Tips and Tricks with our Quantum Hive.
                     </Link>
                   </h4>
                   <Link href="/blog/blog-details" className="read-more-btn">
